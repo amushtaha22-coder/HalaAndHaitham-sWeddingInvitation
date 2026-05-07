@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>دعوة فرح | زفاف مبارك</title>
+    <!-- Google Fonts + Arabic stylistic fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf6eb;  /* warm parchment background */
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
+            color: #3e2c1f;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* custom scrollbar for elegance */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eedfc8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2a15b;
+            border-radius: 10px;
+        }
+
+        /* main container with soft max-width, centered */
+        .invitation-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* decorative background texture (subtle grain) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#e8dccc 0.8px, transparent 0.8px);
+            background-size: 28px 28px;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* main card style */
+        .invitation-card {
+            position: relative;
+            background: #fffef7;
+            border-radius: 48px 32px 56px 32px;
+            box-shadow: 0 30px 45px -25px rgba(0, 0, 0, 0.2), 0 8px 18px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            z-index: 2;
+            backdrop-filter: blur(0px);
+            border: 1px solid rgba(212, 175, 85, 0.3);
+        }
+
+        /* golden gradients + delicate border */
+        .gold-border {
+            position: relative;
+        }
+        .gold-border::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(200, 165, 80, 0.5);
+            border-radius: 32px 20px 40px 20px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        /* artistic arch / top decoration */
+        .ornament-top {
+            text-align: center;
+            padding: 2rem 1.5rem 0.5rem;
+            position: relative;
+        }
+        .ornament-top i {
+            color: #c9aa4b;
+            font-size: 2rem;
+            margin: 0 0.4rem;
+            text-shadow: 0 0 2px rgba(0,0,0,0.1);
+        }
+        .floral-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 16px 0 10px;
+        }
+        .floral-divider .line {
+            height: 1px;
+            width: 80px;
+            background: linear-gradient(90deg, transparent, #d4af37, #b88b2c, #d4af37, transparent);
+        }
+        .floral-divider i {
+            color: #daa84d;
+            font-size: 1.2rem;
+        }
+
+        /* basmala + title */
+        .basmala {
+            font-family: 'Amiri', serif;
+            font-size: 1.7rem;
+            color: #9b7b3a;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        .invite-title {
+            font-size: 2.9rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #b48b3a, #e4bc6e, #c69c45);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+            letter-spacing: 2px;
+            margin: 0.5rem 0;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #6b4c2c;
+            border-top: 1px dashed #e9dbbc;
+            border-bottom: 1px dashed #e9dbbc;
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            margin-top: 8px;
+        }
+
+        /* couple names area */
+        .couple-section {
+            text-align: center;
+            margin: 2rem 1rem;
+            position: relative;
+        }
+        .names-container {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.8rem 2rem;
+            font-family: 'Amiri', serif;
+        }
+        .bride, .groom {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4a3622;
+            background: #fdf6e3;
+            padding: 0.2rem 1.2rem;
+            border-radius: 60px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .ampersand {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #c9a343;
+            font-family: serif;
+        }
+        .small-text {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #937a46;
+            margin-top: 1rem;
+        }
+
+        /* details grid with date, venue, etc */
+        .details-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+            margin: 2rem 1.8rem 2rem;
+        }
+        .detail-card {
+            background: #fefaf0;
+            border-radius: 32px;
+            padding: 1rem 1.8rem;
+            min-width: 170px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            border: 1px solid #f3e9cf;
+            transition: transform 0.2s;
+        }
+        .detail-card:hover {
+            transform: translateY(-5px);
+            border-color: #e7cf97;
+        }
+        .detail-card i {
+            font-size: 2.2rem;
+            color: #c9a343;
+            margin-bottom: 0.6rem;
+        }
+        .detail-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #b28839;
+            margin-bottom: 0.3rem;
+        }
+        .detail-card p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5c431f;
+        }
+        .highlight-number {
+            font-weight: 800;
+            color: #e2af44;
+            font-size: 1.2rem;
+            margin: 0 2px;
+        }
+
+        .parents-names{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: nowrap; /* يمنع نزولهم تحت بعض */
+}
+
+.parents-names > div{
+    text-align: center;
+    min-width: 0;
+}
+
+.parents-names div div{
+    font-family:'Amiri', serif;
+    font-size:1.4rem;
+    color:#8b6a2f;
+    font-weight:700;
+    white-space: nowrap; /* يمنع كسر الاسم */
+}
+
+/* للجوال */
+@media (max-width:700px){
+    .parents-names{
+        gap: 1rem;
+    }
+
+    .parents-names div div{
+        font-size: 0.95rem;
+    }
+}
+
+        /* special numeric tribute: 10 - 2 (second month) + extra 2 reference */
+        .numeric-tribute {
+            background: linear-gradient(120deg, #fff3e0, #fffbf0);
+            border-radius: 50px;
+            padding: 0.6rem 1.4rem;
+            display: inline-flex;
+            gap: 1.2rem;
+            justify-content: center;
+            margin: 0.8rem auto 1.2rem;
+            width: fit-content;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #9c7b45;
+            border: 1px solid #efdfb5;
+            backdrop-filter: blur(2px);
+        }
+        .numeric-tribute span {
+            background: #f5e7ce;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: #a77f30;
+        }
+
+        /* message + arabic poetry */
+        .message-area {
+            text-align: center;
+            padding: 0 1.5rem 1.2rem;
+            font-size: 1.05rem;
+            color: #4d3b22;
+        }
+        .poetry {
+            font-family: 'Amiri', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            background: #fbf6e8;
+            padding: 1rem;
+            border-radius: 60px;
+            margin: 1rem 0;
+            color: #7c5f34;
+        }
+
+        /* map / venue location (scrolling friendly) */
+        .location-map {
+            margin: 2rem 2rem 1.5rem;
+            background: #e6ddc3;
+            border-radius: 32px;
+            padding: 0.6rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .map-placeholder {
+            background: #cfc29e;
+            border-radius: 28px;
+            text-align: center;
+            padding: 1.2rem;
+            color: #2e2b1f;
+            font-weight: 500;
+        }
+        .map-placeholder i {
+            font-size: 2rem;
+            color: #aa8439;
+            margin-bottom: 8px;
+        }
+
+        /* rsvp section with scroll content */
+        .rsvp-section {
+            margin: 2rem 2rem 2rem;
+            background: #faf2e1;
+            border-radius: 40px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .rsvp-section h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #b2872e;
+            margin-bottom: 1rem;
+        }
+        .rsvp-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            font-family: 'Tajawal', sans-serif;
+            background: white;
+            border: 1px solid #dbbc7c;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #674f28;
+        }
+        .btn-gold {
+            background: #e7c270;
+            border: none;
+            color: #2e241a;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .btn-gold:hover {
+            background: #dbb051;
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .btn-outline:hover {
+            background: #e1cfaa;
+            border-color: #c2a055;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9f8a62;
+            border-top: 1px solid #eedfc8;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* scroll-down hint */
+        .scroll-hint {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        .scroll-hint i {
+            background: #dbb45c30;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            color: #c9a555;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(8px); opacity: 1; }
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .invitation-wrapper {
+                padding: 1rem 1rem 3rem;
+            }
+            .invite-title {
+                font-size: 2rem;
+            }
+            .bride, .groom {
+                font-size: 1.5rem;
+                padding: 0.2rem 0.8rem;
+            }
+            .details-grid {
+                gap: 1rem;
+            }
+            .detail-card {
+                min-width: 140px;
+                padding: 0.7rem 1rem;
+            }
+            .names-container {
+                gap: 0.5rem;
+            }
+            .ampersand {
+                font-size: 2rem;
+            }
+            .rsvp-section {
+                margin: 1rem 0.8rem;
+            }
+        }
+        /* custom decorative circle accents */
+        .bg-accent {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #faeecb, transparent);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="invitation-wrapper">
+    <!-- scroll down hint area (interactive) -->
+    <div class="scroll-hint" id="scrollHint">
+        <i class="fas fa-chevron-down"></i>
+        <p style="font-size: 0.8rem; margin-top: 5px; color:#b69447;">انزل لأسفل للمزيد من التفاصيل</p>
+    </div>
+
+    <div class="invitation-card gold-border">
+        <div class="ornament-top">
+            <i class="fas fa-star-and-crescent"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-ring"></i>
+            <div class="floral-divider">
+                <div class="line"></div>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-heart" style="color:#ddb46c;"></i>
+                <i class="fas fa-leaf"></i>
+                <div class="line"></div>
+            </div>
+            <div class="basmala">﷽</div>
+            <div class="poetry">
+                “وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+                 لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً”<br>
+            </div>
+            <div class="invite-title">دعوة فرح</div>
+
+            <div class="subtitle">بكلِّ سعادةٍ و أريجِ الياسمين يتشرف</div>
+        </div>
+
+      <!-- couple names -->
+<div class="couple-section">
+
+    <div class="parents-names">
+
+        <div>
+            <div>
+                السيد / ناجي جبر صيام
+            </div>
+        </div>
+
+        <div>
+            <div>
+                السيد / سيد حيدر مشتهى
+            </div>
+        </div>
+
+    </div>
+
+    <div style="font-size:1rem; color:#7b6440; margin-top:0.3rem;">
+        بدعوتكم لحضور حفل زفاف نجليهما
+    </div>
+
+    <div class="names-container">
+        <span class="groom">
+            <i class="fas fa-user-tie"></i>
+            هيثم
+        </span>
+
+        <span class="ampersand">&</span>
+
+        <span class="bride">
+            حلا
+            <i class="fas fa-venus"></i>
+        </span>
+    </div>
+
+    <div class="small-text">
+        يتشرفان بدعوتكم لحضور زفافهما المبارك
+    </div>
+
+</div>
+
+</div>
+
+        <!-- numeric tribute : inspired from original design numbers (10 , 2 , 2) -->
+        <div style="display: flex; justify-content: center;">
+            <div class="numeric-tribute">
+                <span>6</span> <i class="fas fa-calendar-alt"></i> <span>8</span> <i class="fas fa-moon"></i> <span>2026</span>
+                <span style="font-size:0.9rem; font-weight:normal;"> &nbsp; موعد الفرح</span>
+            </div>
+        </div>
+
+        <!-- grid details includes exact date using 10 and second month -->
+        <div class="details-grid">
+            <div class="detail-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>التاريخ</h3>
+                <p><span class="highlight-number">6</span> من شهر <span class="highlight-number">8</span>(أغسطس)<br> سنة <span class="highlight-number">2026</span></p>
+            </div>
+            <div class="detail-card">
+                <i class="fas fa-clock"></i>
+                <h3>الوقت</h3>
+                <p><span class="highlight-number">7:00</span> مساءً <br> استقبال الساعة 6:30</p>
+            </div>
+            <div class="detail-card">
+                <i class="fas fa-place-of-worship"></i>
+                <h3>قاعة الفرح</h3>
+                <p>قاعات نادي السكة- قاعة VIP <br> القاهرة- مدينة نصر</p>
+            </div>
+        </div>
+
+        <!-- Arabic poetic message -->
+          <div class="message-area">
+            <div class="poetry">
+                "وَمَا الْعَيْشُ إِلَّا مَوْعِدُ الْحُبِّ وَاللِّقَا
+                فَيَا طَيرَ فَرْحٍ فَوْقَ هَذَا الرُّبَى غِنَّا"<br>
+            </div>
+            <p style="font-weight:500;">نسعد بحضوركم وتشاركونا أفراح قلوبنا، ليلة مميزة تحت ضوء القمر وعبير الزهور.</p>
+        </div>
+
+        <!-- location mock up with map style (scrolling down keeps showing extra) -->
+        <div class="location-map">
+            <div class="map-placeholder">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>📍 موقع قاعة الأفراح</strong><br>قاعه VIP للحفلات . ثان مدينة نصر, محافظة القاهرة</p>
+                <div style="background:#d6c69e; height: 60px; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-top: 8px; gap: 10px;">
+                    <i class="fas fa-location-dot" style="color:#5b401d;"></i>
+                    <span style="font-size: 0.85rem;">خرائط قوقل:El-Sekka El-Hadeed Club, قسم ثان مدينة نصر، محافظة القاهرة‬، القاهره, Cairo Governorate</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra details / second scroll section: program & information -->
+        <div style="padding: 0 1.8rem 0.8rem;">
+            <div class="floral-divider"><div class="line"></div><i class="fas fa-circle" style="font-size: 6px;"></i><i class="fas fa-heart"></i><i class="fas fa-circle" style="font-size: 6px;"></i><div class="line"></div></div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 1rem;">
+                <div style="flex:1; min-width:200px; text-align:center;">
+                    <i class="fas fa-camera"></i>
+                    <p><strong>التصوير</strong><br> يرجى عدم التصوير حفاظًا على الخصوصية📷📵</p>
+                </div>
+                <div style="flex:1; min-width:200px; text-align:center;">
+                    <i class="fas fa-child"></i>
+                    <p><strong>الأطفال</strong><br>حرصًا على راحة الحضور، نعتذر عن استقبال الأطفال</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP interactive card content (scroll further) -->
+        <div class="rsvp-section">
+            <h3><i class="fas fa-envelope-open-text"></i> تأكيد الحضور</h3>
+            <p>نرجو تأكيد حضوركم لترتيب أجواء الضيافة بما يليق بكم</p>
+            <div class="rsvp-buttons">
+                <button class="btn btn-gold" id="rsvpConfirmBtn"><i class="fas fa-check-circle"></i> سأحضر بكل سرور</button>
+                <button class="btn btn-outline" id="rsvpRegretBtn"><i class="fas fa-heart-broken"></i> أعتذر، لا يمكنني الحضور</button>
+            </div>
+            <div id="rsvpMessage" style="margin-top: 1.2rem; font-size:0.9rem; color:#b4944b; transition:0.2s;"></div>
+        </div>
+
+        <!-- final footer symbolizing unity and thanks -->
+        <div class="footer-note">
+            <span><i class="fas fa-calendar-week"></i> 6/8/2026 - دعوة خاصة</span>
+            <span><i class="fas fa-hand-peace"></i> ليلة مميزة ننتظركم</span>
+            <span><i class="fas fa-dove"></i> بارك الله فيكم</span>
+        </div>
+        <div style="text-align: center; padding-bottom: 2rem; font-size: 0.7rem; color:#cbaa66;">
+            تصميم مستوحى من رونق الدعوة الأصلية · كل التصاميم تعكس فرح العمر
+        </div>
+    </div>
+    <!-- subtle second decorative scroll element -->
+    <div style="text-align: center; margin-top: 2rem;">
+        <i class="fas fa-rings-wedding" style="color:#e6ba60; opacity:0.7;"></i>
+        <p style="font-size:0.7rem; color:#a38146;">شكرًا لتشريفكم · في صحبة الأحباب نكتب الفرح</p>
+    </div>
+</div>
+
+<script>
+    // Smooth scroll to bottom when clicking the scroll-hint arrow
+    const scrollHint = document.getElementById('scrollHint');
+    if(scrollHint) {
+        scrollHint.addEventListener('click', function(e) {
+            window.scrollBy({
+                top: window.innerHeight * 0.8,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // RSVP interaction messages
+    const confirmBtn = document.getElementById('rsvpConfirmBtn');
+    const regretBtn = document.getElementById('rsvpRegretBtn');
+    const rsvpMsgDiv = document.getElementById('rsvpMessage');
+
+    if(confirmBtn) {
+        confirmBtn.addEventListener('click', () => {
+            rsvpMsgDiv.innerHTML = '<i class="fas fa-smile-wink"></i> شكراً لتأكيد حضوركم! ننتظركم بفرح كبير 💐';
+            rsvpMsgDiv.style.color = '#a98442';
+            rsvpMsgDiv.style.fontWeight = '500';
+            // optional slight reset after few seconds? not needed but nice.
+            setTimeout(() => {
+                if(rsvpMsgDiv.innerHTML.includes('شكراً لتأكيد')) {
+                    // keep but you can reset later if needed
+                }
+            }, 3000);
+        });
+    }
+    if(regretBtn) {
+        regretBtn.addEventListener('click', () => {
+            rsvpMsgDiv.innerHTML = '<i class="fas fa-leaf"></i> نأسف لغيابكم، ستبقون في قلوبنا. نتمنى لكم كل الخير.';
+            rsvpMsgDiv.style.color = '#b5763e';
+        });
+    }
+
+    // subtle entrance animation for the card
+    window.addEventListener('load', () => {
+        const card = document.querySelector('.invitation-card');
+        if(card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }
+        // additional numbers reference for 2/10/2: already present in tribute and date :)
+        console.log("دعوة فرح - بالتصميم المستوحى من العناصر المرقمة 10 و 2 ");
+    });
+
+    // extra design for showing the perfect harmony: also informs "2" as second month, second ceremony year extra
+    // add an elegant dynamic element to highlight numeric reference
+    const tributeSpan = document.querySelector('.numeric-tribute span');
+    // nothing else needed, all numbers are elegantly showcased
+</script>
+</body>
+</html>
