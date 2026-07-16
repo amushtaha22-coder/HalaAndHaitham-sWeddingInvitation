@@ -631,6 +631,110 @@
 .map-placeholder span {
     word-break: break-word;
 }
+
+
+/* =====================
+   Google Map Fix
+===================== */
+
+.location-map {
+    width: calc(100% - 3rem);
+    margin: 2rem auto;
+    padding: 12px;
+    background:#e6ddc3;
+    border-radius:32px;
+}
+
+
+.map-placeholder {
+    background:#fffef7;
+    padding:20px;
+    border-radius:25px;
+    text-align:center;
+    overflow:hidden;
+}
+
+
+.map-placeholder > i {
+    font-size:2rem;
+    color:#aa8439;
+    margin-bottom:10px;
+}
+
+
+.map-placeholder h3 {
+    color:#8b682b;
+    font-size:1.3rem;
+}
+
+
+.map-placeholder p {
+    color:#5c431f;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+
+.map-info {
+    background:#f0e3c2;
+    border-radius:20px;
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    font-size:0.9rem;
+    margin-bottom:15px;
+}
+
+
+.map-info i {
+    color:#7b5720;
+    font-size:1.2rem;
+}
+
+
+.map-frame {
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    border-radius:25px;
+}
+
+
+.map-frame iframe {
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+
+/* Mobile */
+@media(max-width:600px){
+
+    .location-map {
+        width:calc(100% - 1.5rem);
+        margin:1rem auto;
+        padding:8px;
+    }
+
+
+    .map-placeholder {
+        padding:15px 10px;
+    }
+
+
+    .map-info {
+        font-size:0.75rem;
+    }
+
+
+    .map-frame {
+        height:260px;
+    }
+
+}
     </style>
 </head>
 <body>
@@ -776,17 +880,16 @@
             </span>
         </div>
 
+       
+        <div class="map-frame">
 
-        <iframe
-            src="https://www.google.com/maps?q=El-Sekka%20El-Hadeed%20Club%20Nasr%20City%20Cairo&output=embed"
-            width="100%"
-            height="350"
-            style="border:0; border-radius:25px;"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
+            <iframe
+            src="https://www.google.com/maps?قاعه+VIP+للحفلات%E2%80%AD/@30.0575873,31.3030769,17z/data=!3m1!4b1!4m6!3m5!1s0x14583f2b3f4a612b:0xa57f5fd9f3bd1468!8m2!3d30.0575873!4d31.3030769!16s%2Fg%2F11rcpt1y3s!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D"
+            loading="lazy"
+            allowfullscreen="">
+            </iframe>
 
-
+        </div>
     </div>
 
 </div>
